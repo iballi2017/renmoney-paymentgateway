@@ -17,7 +17,7 @@ import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 })
 export class PaymentFormComponent implements OnInit {
   @Output() serverResponseFromModal = new EventEmitter<object>();
-  isLinear = true;
+  isLinear = false;
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   thirdFormGroup!: FormGroup;

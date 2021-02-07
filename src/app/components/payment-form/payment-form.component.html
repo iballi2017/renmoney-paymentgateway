@@ -11,17 +11,12 @@
 
 </div>
 
-<!-- 
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button> -->
-
 <h2><span class="text_primary text-center">Making Financial Inclusion</span>&nbsp;<span class="text_warning">Count</span></h2>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
             <h3 class="text-center">Eligibility Check</h3>
-            <!-- <ng-template matStepLabel>Fill out your name</ng-template> -->
+            <ng-template matStepLabel>Step</ng-template>
             <!-- firstname -->
             <mat-form-field class="full-width">
                 <mat-label>Full Name</mat-label>
@@ -123,7 +118,7 @@
     <!-- <mat-step [stepControl]="secondFormGroup" label="Fill out your address"> -->
     <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
-
+            <ng-template matStepLabel>Step</ng-template>
             <h3 class="text-center">Personal Details</h3>
             <!-- employment status -->
             <mat-form-field class="full-width" appearance="fill">
@@ -190,6 +185,7 @@
     <mat-step [stepControl]="thirdFormGroup">
         <form [formGroup]="thirdFormGroup">
 
+            <ng-template matStepLabel>Done</ng-template>
             <h3 class="text-center">Employment Details</h3>
             <p class="text-info text-center my-3">You are almost done.</p>
             <!-- employer name -->
@@ -240,7 +236,7 @@
                     email</small>
             </mat-form-field>
             <div class="mb-3">
-                <button mat-button type="submit" class="btn-block bg_primary text-white" (click)="submitForm()"
+                <button mat-button type="submit" class="btn-block bg_primary_light text-white" (click)="submitForm()"
                     [disabled]="thirdFormGroup.invalid">Submit</button>
             </div>
             <div class="d-flex justify-content-between align-items-center">
