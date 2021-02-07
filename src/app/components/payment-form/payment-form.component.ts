@@ -24,6 +24,11 @@ export class PaymentFormComponent implements OnInit {
   errorMsg: any;
   hasSendingDataError = false;
   state: any;
+  lgaList: any;
+
+  // test
+  testMsg:any;
+  lgaExist = true;
 
   constructor(
     public dialogRef: MatDialogRef<PaymentFormComponent>,
@@ -58,10 +63,29 @@ export class PaymentFormComponent implements OnInit {
     });
 
 
+    /* list of states */
     this.state = this._nigerianStateSvc.getStates();
-    console.log(this.state)
   }
 
+
+  /* list of lga from each state */
+  onSelectState(event: any) {
+    // console.log(this.state)
+    this.state.forEach((state: any) => {
+      if (state.name === event.value) {
+        // console.log(state.lga);
+        if (state.lga) {
+          this.lgaList = state.lga
+          this.lgaExist = true;
+        } else {
+          // console.log("no lga for the selected state");
+          this.testMsg = "no lga for the selected state";
+          this.lgaExist = false;
+        }
+      }
+    });
+    // console.log(event.value);
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -84,11 +108,11 @@ export class PaymentFormComponent implements OnInit {
         this.errorMsg = error
         this._paymentSvc.hasSendingDataError = true
         console.log(error);
-        if(this._paymentSvc.hasSendingDataError){           
-        this._messengerSvc.sendErrorMsg(error);
-        console.log(typeof(error))
-        this.openBottomSheet();        
-        console.log(this._paymentSvc.hasSendingDataError);
+        if (this._paymentSvc.hasSendingDataError) {
+          this._messengerSvc.sendErrorMsg(error);
+          console.log(typeof (error))
+          this.openBottomSheet();
+          console.log(this._paymentSvc.hasSendingDataError);
         }
       })
   }

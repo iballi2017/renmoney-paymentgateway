@@ -62,7 +62,7 @@
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>State</mat-label>
                 <mat-select formControlName="clientStateCtrl" required
-                [ngClass]="{'is-invalid': firstFormGroup.get('clientStateCtrl')?.touched && firstFormGroup.get('clientStateCtrl')?.invalid}">
+                [ngClass]="{'is-invalid': firstFormGroup.get('clientStateCtrl')?.touched && firstFormGroup.get('clientStateCtrl')?.invalid}" (selectionChange)="onSelectState($event)">
                     <mat-option *ngFor="let state of state" [value]="state.name">
                         {{state.name}}
                     </mat-option>
@@ -74,11 +74,12 @@
                 <mat-label>LGA</mat-label>
                 <mat-select formControlName="clientLgaCtrl" required
                 [ngClass]="{'is-invalid': firstFormGroup.get('clientLgaCtrl')?.touched && firstFormGroup.get('clientLgaCtrl')?.invalid}">
-                    <mat-option *ngFor="let lga of lga" [value]="lga.value">
-                        {{lga.viewValue}}
+                    <mat-option *ngFor="let lga of lgaList" [value]="lga">
+                        {{lga}}
                     </mat-option>
                 </mat-select>
                 <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Select a local govt. area</small>
+                <p class="text-info" *ngIf="!lgaExist">{{testMsg}}</p>
             </mat-form-field>
             <!-- employment status -->
             <mat-form-field class="full-width" appearance="fill">

@@ -8,13 +8,13 @@ export class NigerianstatesService {
     {
         id: 1,
         name: "Abia",
-        states: ["Aba North", "Aba South", "Arochukwu", "Bende", "Isiala Ngwa South", "Ikwuano", "Isiala", "Ngwa North",
+        lga: ["Aba North", "Aba South", "Arochukwu", "Bende", "Isiala Ngwa South", "Ikwuano", "Isiala", "Ngwa North",
         "Isukwuato", "Ukwa West", "Ukwa East", "Umuahia", "Umuahia South"]
     },
     {
         id: 2,
         name: "Adamawa",
-        states: ["Demsa", "Fufore", "Ganye", "Girei", "Gombi", "Jada", "Yola North", "Lamurde", "Madagali", "Maiha",
+        lga: ["Demsa", "Fufore", "Ganye", "Girei", "Gombi", "Jada", "Yola North", "Lamurde", "Madagali", "Maiha",
          "Mayo-Belwa", "Michika", "Mubi South", "Numna", "Shelleng", "Song","Toungo", "Jimeta", "Yola South", "Hung"]
     },
     {
