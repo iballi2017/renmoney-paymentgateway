@@ -15,15 +15,31 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 }
 .bg_primary{
+  background-color: #055e83;
+}
+.bg_primary_light{
   background-color: #169ba7;
 }
 .text_primary{
+  color: #055e83;
+}
+.text_primary_light{
   color: #169ba7;
 }
 .text_warning{
 color: #f15822;
 }
 
+.mat-step-header .mat-step-icon-selected{
+  background-color: #169ba7;
+}
+.mat-step-header .mat-step-icon {
+  background-color: rgba(0,0,0,.44);
+}
+.mat-step-header .mat-step-icon-state-edit {
+    background-color: #055e83;
+    color: #fff;
+}
 
 /* scroll bar style */
 ::-webkit-scrollbar {
