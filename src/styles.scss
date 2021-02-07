@@ -9,3 +9,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cursor-pointer{
   cursor: pointer;
 }
+.focus_outline_0{
+  &:focus{
+    outline: 0;
+  }
+}
+.bg_primary{
+  background-color: #169ba7;
+}
+.text_primary{
+  color: #169ba7;
+}
+.text_warning{
+color: #f15822;
+}
+
+
+/* scroll bar style */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+  background: #169ba7; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}

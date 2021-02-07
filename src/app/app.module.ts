@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormResponseModalComponent } from './components/form-response-modal/form-response-modal.component';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
+import { MainNavigationComponent } from './components/main-navigation/main-navigation.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.com
     HomeComponent,
     PaymentFormComponent,
     FormResponseModalComponent,
-    BottomSheetComponent
+    BottomSheetComponent,
+    MainNavigationComponent
   ],
   imports: [
     BrowserModule,

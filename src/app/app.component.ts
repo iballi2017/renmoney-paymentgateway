@@ -33,9 +33,6 @@ export class AppComponent implements OnInit{
     //     this.openBottomSheet();
     //   }
     // })
-
-
-    this._paymentSvc.getCountries().subscribe(response=>console.log(response));
   }
 
   

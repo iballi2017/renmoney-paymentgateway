@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { testUrl } from 'src/config/api';
 import { catchError, map, tap, retry } from 'rxjs/operators';
 import { handleError } from 'src/config/errorResponse';/* Importing errorResponse Handler */
-import { countriesUrl } from 'src/config/api';
 
 @Injectable({
   providedIn: 'root'
@@ -22,13 +21,4 @@ serverErrorMsg = "";
       catchError(handleError)
     );
   }
-
-  getCountries(){
-    console.log("Hello")
-    return this._http.get(countriesUrl).pipe(
-      retry(3),
-      catchError(handleError)
-    )
-  }
-
 }

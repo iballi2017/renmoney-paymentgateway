@@ -1,9 +1,8 @@
-<div class="d-flex align-items-center justify-content-between"><img src="../../../assets/images/renmoney-logo.png"
-        alt="">
-
+<div class="d-flex align-items-center justify-content-between">
+    <img src="https://i.ibb.co/4Jsy8bz/navbrandlogo.png" class="img img-fluid brandlogo-sm" alt="">
     <div class="text-right">
         <button class="bg-white" mat-flat-button>
-            <span class="material-icons ml-auto cursor-pointer" aria-label="Cancel this form" tabindex="0"
+            <span class="material-icons ml-auto cursor-pointer focus_outline_0" aria-label="Cancel this form" tabindex="0"
                 (click)="onNoClick()">
                 close
             </span>
@@ -12,10 +11,12 @@
 
 </div>
 
-
+<!-- 
 <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button>
+</button> -->
+
+<h2><span class="text_primary text-center">Making Financial Inclusion</span>&nbsp;<span class="text_warning">Count</span></h2>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
@@ -25,7 +26,7 @@
             <mat-form-field class="full-width">
                 <mat-label>Full Name</mat-label>
                 <input matInput placeholder="First, last and middle name" formControlName="clientNameCtrl" required
-                [ngClass]="{'is-invalid': firstFormGroup.get('clientNameCtrl')?.touched && firstFormGroup.get('clientNameCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': firstFormGroup.get('clientNameCtrl')?.touched && firstFormGroup.get('clientNameCtrl')?.invalid}">
                 <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Name is
                     required.</small>
             </mat-form-field>
@@ -42,7 +43,7 @@
             <mat-form-field class="full-width">
                 <mat-label>Email Address</mat-label>
                 <input matInput type="email" placeholder="yoshi@example.com" formControlName="clientEmailCtrl" required
-                [ngClass]="{'is-invalid': firstFormGroup.get('clientEmailCtrl')?.touched && firstFormGroup.get('clientEmailCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': firstFormGroup.get('clientEmailCtrl')?.touched && firstFormGroup.get('clientEmailCtrl')?.invalid}">
                 <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Email address is
                     required.</small>
             </mat-form-field>
@@ -55,14 +56,16 @@
             <mat-form-field class="full-width">
                 <mat-label>BVN</mat-label>
                 <input matInput type="number" formControlName="clientBvnCtrl" required
-                [ngClass]="{'is-invalid': firstFormGroup.get('clientBvnCtrl')?.touched && firstFormGroup.get('clientBvnCtrl')?.invalid}">
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your BVN digits.</small>
+                    [ngClass]="{'is-invalid': firstFormGroup.get('clientBvnCtrl')?.touched && firstFormGroup.get('clientBvnCtrl')?.invalid}">
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your BVN
+                    digits.</small>
             </mat-form-field>
             <!-- state -->
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>State</mat-label>
                 <mat-select formControlName="clientStateCtrl" required
-                [ngClass]="{'is-invalid': firstFormGroup.get('clientStateCtrl')?.touched && firstFormGroup.get('clientStateCtrl')?.invalid}" (selectionChange)="onSelectState($event)">
+                    [ngClass]="{'is-invalid': firstFormGroup.get('clientStateCtrl')?.touched && firstFormGroup.get('clientStateCtrl')?.invalid}"
+                    (selectionChange)="onSelectState($event)">
                     <mat-option *ngFor="let state of state" [value]="state.name">
                         {{state.name}}
                     </mat-option>
@@ -73,40 +76,44 @@
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>LGA</mat-label>
                 <mat-select formControlName="clientLgaCtrl" required
-                [ngClass]="{'is-invalid': firstFormGroup.get('clientLgaCtrl')?.touched && firstFormGroup.get('clientLgaCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': firstFormGroup.get('clientLgaCtrl')?.touched && firstFormGroup.get('clientLgaCtrl')?.invalid}">
                     <mat-option *ngFor="let lga of lgaList" [value]="lga">
                         {{lga}}
                     </mat-option>
                 </mat-select>
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Select a local govt. area</small>
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Select a local govt.
+                    area</small>
                 <p class="text-info" *ngIf="!lgaExist">{{testMsg}}</p>
             </mat-form-field>
             <!-- employment status -->
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Employment status</mat-label>
                 <mat-select formControlName="clientEmploymentStatusCtrl" required
-                [ngClass]="{'is-invalid': firstFormGroup.get('clientEmploymentStatusCtrl')?.touched && firstFormGroup.get('clientEmploymentStatusCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': firstFormGroup.get('clientEmploymentStatusCtrl')?.touched && firstFormGroup.get('clientEmploymentStatusCtrl')?.invalid}">
                     <mat-option *ngFor="let status of employmentStatus" [value]="status.value">
                         {{status.viewValue}}
                     </mat-option>
                 </mat-select>
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Provide your employment status</small>
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Provide your employment
+                    status</small>
             </mat-form-field>
             <!-- monthly income -->
             <mat-form-field class="full-width">
                 <mat-label>Monthly Income</mat-label>
                 <input matInput type="number" formControlName="clientMonthlyIncomeCtrl" required
-                [ngClass]="{'is-invalid': firstFormGroup.get('clientMonthlyIncomeCtrl')?.touched && firstFormGroup.get('clientMonthlyIncomeCtrl')?.invalid}">
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please enter your monthly income information</small>
+                    [ngClass]="{'is-invalid': firstFormGroup.get('clientMonthlyIncomeCtrl')?.touched && firstFormGroup.get('clientMonthlyIncomeCtrl')?.invalid}">
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please enter your monthly income
+                    information</small>
             </mat-form-field>
             <!-- dob -->
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>DOB</mat-label>
                 <input matInput [matDatepicker]="dateOdBirthPicker" formControlName="clientDOBCtrl" required
-                [ngClass]="{'is-invalid': firstFormGroup.get('clientDOBCtrl')?.touched && firstFormGroup.get('clientDOBCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': firstFormGroup.get('clientDOBCtrl')?.touched && firstFormGroup.get('clientDOBCtrl')?.invalid}">
                 <mat-datepicker-toggle matSuffix [for]="dateOdBirthPicker"></mat-datepicker-toggle>
                 <mat-datepicker #dateOdBirthPicker></mat-datepicker>
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Provide your date of birth</small>
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Provide your date of
+                    birth</small>
             </mat-form-field>
             <div class="text-right">
                 <button mat-button matStepperNext>Next</button>
@@ -122,49 +129,54 @@
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Residential status</mat-label>
                 <mat-select formControlName="residentialStatusCtrl" required
-                [ngClass]="{'is-invalid': secondFormGroup.get('residentialStatusCtrl')?.touched && secondFormGroup.get('residentialStatusCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': secondFormGroup.get('residentialStatusCtrl')?.touched && secondFormGroup.get('residentialStatusCtrl')?.invalid}">
                     <mat-option *ngFor="let status of residentialStatus" [value]="status.value">
                         {{status.viewValue}}
                     </mat-option>
                 </mat-select>
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Provide your residential status</small>
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Provide your residential
+                    status</small>
             </mat-form-field>
             <mat-form-field class="full-width">
                 <mat-label>Address</mat-label>
                 <input matInput formControlName="clientAddressCtrl" required
-                [ngClass]="{'is-invalid': secondFormGroup.get('clientAddressCtrl')?.touched && secondFormGroup.get('clientAddressCtrl')?.invalid}">
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Provide your residential status</small>
+                    [ngClass]="{'is-invalid': secondFormGroup.get('clientAddressCtrl')?.touched && secondFormGroup.get('clientAddressCtrl')?.invalid}">
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Provide your residential
+                    status</small>
             </mat-form-field>
             <!-- date moved in -->
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Date moved in</mat-label>
                 <input matInput [matDatepicker]="datePovedInPicker2" formControlName="dateMovedInCtrl" required
-                [ngClass]="{'is-invalid': secondFormGroup.get('dateMovedInCtrl')?.touched && secondFormGroup.get('dateMovedInCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': secondFormGroup.get('dateMovedInCtrl')?.touched && secondFormGroup.get('dateMovedInCtrl')?.invalid}">
                 <mat-datepicker-toggle matSuffix [for]="datePovedInPicker2"></mat-datepicker-toggle>
                 <mat-datepicker #datePovedInPicker2></mat-datepicker>
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide this information</small>
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide this
+                    information</small>
             </mat-form-field>
             <!-- marital status -->
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Employment status</mat-label>
                 <mat-select formControlName="employmentStatusCtrl" required
-                [ngClass]="{'is-invalid': secondFormGroup.get('employmentStatusCtrl')?.touched && secondFormGroup.get('employmentStatusCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': secondFormGroup.get('employmentStatusCtrl')?.touched && secondFormGroup.get('employmentStatusCtrl')?.invalid}">
                     <mat-option *ngFor="let status of maritalStatus" [value]="status.value">
                         {{status.viewValue}}
                     </mat-option>
                 </mat-select>
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your employment status</small>
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your employment
+                    status</small>
             </mat-form-field>
             <!-- level of education -->
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Level of Education</mat-label>
                 <mat-select formControlName="educationLevelCtrl" required
-                [ngClass]="{'is-invalid': secondFormGroup.get('educationLevelCtrl')?.touched && secondFormGroup.get('educationLevelCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': secondFormGroup.get('educationLevelCtrl')?.touched && secondFormGroup.get('educationLevelCtrl')?.invalid}">
                     <mat-option *ngFor="let level of educationLevel" [value]="level.value">
                         {{level.viewValue}}
                     </mat-option>
                 </mat-select>
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your level of education</small>
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your level of
+                    education</small>
             </mat-form-field>
             <div class="d-flex justify-content-between align-items-center">
                 <button mat-button matStepperPrevious>Back</button>
@@ -184,26 +196,29 @@
             <mat-form-field class="full-width">
                 <mat-label>Employer Name</mat-label>
                 <input matInput placeholder="First, last and middle name" formControlName="employerNameCtrl" required
-                [ngClass]="{'is-invalid': thirdFormGroup.get('employerNameCtrl')?.touched && thirdFormGroup.get('employerNameCtrl')?.invalid}">
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your employer's name</small>
+                    [ngClass]="{'is-invalid': thirdFormGroup.get('employerNameCtrl')?.touched && thirdFormGroup.get('employerNameCtrl')?.invalid}">
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your employer's
+                    name</small>
             </mat-form-field>
             <!-- employer sector -->
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Employer Sector</mat-label>
                 <mat-select formControlName="employerSectorCtrl" required
-                [ngClass]="{'is-invalid': thirdFormGroup.get('employerSectorCtrl')?.touched && thirdFormGroup.get('employerSectorCtrl')?.invalid}">
+                    [ngClass]="{'is-invalid': thirdFormGroup.get('employerSectorCtrl')?.touched && thirdFormGroup.get('employerSectorCtrl')?.invalid}">
                     <mat-option *ngFor="let sector of employerSector" [value]="sector.value">
                         {{sector.viewValue}}
                     </mat-option>
                 </mat-select>
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your employer's business sector</small>
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your employer's
+                    business sector</small>
             </mat-form-field>
             <!-- office address -->
             <mat-form-field class="full-width">
                 <mat-label>Office Address</mat-label>
                 <input matInput formControlName="officeAddressCtrl" required
-                [ngClass]="{'is-invalid': thirdFormGroup.get('officeAddressCtrl')?.touched && thirdFormGroup.get('officeAddressCtrl')?.invalid}">
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your office address</small>
+                    [ngClass]="{'is-invalid': thirdFormGroup.get('officeAddressCtrl')?.touched && thirdFormGroup.get('officeAddressCtrl')?.invalid}">
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your office
+                    address</small>
             </mat-form-field>
             <!-- employment start date -->
             <mat-form-field class="full-width" appearance="fill">
@@ -213,18 +228,20 @@
                     [ngClass]="{'is-invalid': thirdFormGroup.get('employmentStartDateCtrl')?.touched && thirdFormGroup.get('employmentStartDateCtrl')?.invalid}">
                 <mat-datepicker-toggle matSuffix [for]="employmentStateDatePicker"></mat-datepicker-toggle>
                 <mat-datepicker #employmentStateDatePicker></mat-datepicker>
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your employment start date</small>
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your employment
+                    start date</small>
             </mat-form-field>
             <!-- work email -->
             <mat-form-field class="full-width">
                 <mat-label>Work Email</mat-label>
                 <input matInput type="email" formControlName="workEmailCtrl" required
-                [ngClass]="{'is-invalid': thirdFormGroup.get('workEmailCtrl')?.touched && thirdFormGroup.get('workEmailCtrl')?.invalid}">
-                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your work email</small>
+                    [ngClass]="{'is-invalid': thirdFormGroup.get('workEmailCtrl')?.touched && thirdFormGroup.get('workEmailCtrl')?.invalid}">
+                <small id="nameErrorMsg" class="form-text text-danger invalid-feedback">Please provide your work
+                    email</small>
             </mat-form-field>
             <div class="mb-3">
-                <button mat-button color="primary" type="submit" class="btn-block"
-                    (click)="submitForm()" [disabled]="thirdFormGroup.invalid">Submit</button>
+                <button mat-button type="submit" class="btn-block bg_primary text-white" (click)="submitForm()"
+                    [disabled]="thirdFormGroup.invalid">Submit</button>
             </div>
             <div class="d-flex justify-content-between align-items-center">
                 <button mat-button matStepperPrevious>Back</button>

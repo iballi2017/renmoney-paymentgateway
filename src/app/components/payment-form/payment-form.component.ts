@@ -2,6 +2,7 @@ import { Component, Inject, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormDropdown } from 'src/app/shared/interface/form-dropdown';
 import { User } from 'src/app/shared/model/user';
 import { MessengerService } from 'src/app/shared/service/messenger.service';
 import { NigerianstatesService } from 'src/app/shared/service/nigerianstates.service';
@@ -16,7 +17,7 @@ import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 })
 export class PaymentFormComponent implements OnInit {
   @Output() serverResponseFromModal = new EventEmitter<object>();
-  isLinear = false;
+  isLinear = true;
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   thirdFormGroup!: FormGroup;
@@ -38,7 +39,7 @@ export class PaymentFormComponent implements OnInit {
     this.firstFormGroup = this._formBuilder.group({
       clientNameCtrl: ['', Validators.required],
       clientGenderCtrl: ['', Validators.required],
-      clientEmailCtrl: ['', Validators.required],
+      clientEmailCtrl: ['', [Validators.required, Validators.email]],
       clientPhoneCtrl: ['', Validators.required],
       clientBvnCtrl: ['', Validators.required],
       clientStateCtrl: ['', Validators.required],
@@ -59,7 +60,7 @@ export class PaymentFormComponent implements OnInit {
       employerSectorCtrl: ['', Validators.required],
       officeAddressCtrl: ['', Validators.required],
       employmentStartDateCtrl: ['', Validators.required],
-      workEmailCtrl: ['', Validators.required]
+      workEmailCtrl: ['', [Validators.required, Validators.email]]
     });
 
 
@@ -122,76 +123,35 @@ export class PaymentFormComponent implements OnInit {
     this._bottomSheet.open(BottomSheetComponent);
   }
 
-  gender: Gender[] = [
+  gender: FormDropdown[] = [
     { value: 'male-0', viewValue: 'Male' },
     { value: 'female-1', viewValue: 'Female' }
   ];
-  // state: State[] = [
-  //   { value: 'abuja-0', viewValue: 'Abuja' },
-  //   { value: 'lagos-1', viewValue: 'Lagos' },
-  //   { value: 'ondo-2', viewValue: 'Ondo' }
-  // ];
-
-  lga: Lga[] = [
+  lga: FormDropdown[] = [
     { value: 'ikeja-0', viewValue: 'Ikeja' },
     { value: 'agege-1', viewValue: 'Agege' },
     { value: 'Idumota-2', viewValue: 'Idumota' }
   ];
-  employmentStatus: EmploymentStatus[] = [
+  employmentStatus: FormDropdown[] = [
     { value: 'employed-0', viewValue: 'Employed' },
     { value: 'selfEmployed-1', viewValue: 'Self-Employed' }
   ];
-  residentialStatus: ResidentialStatus[] = [
+  residentialStatus: FormDropdown[] = [
     { value: 'owner-0', viewValue: 'Owner' },
     { value: 'renting-1', viewValue: 'Renting' }
   ];
-  maritalStatus: MaritalStatus[] = [
+  maritalStatus: FormDropdown[] = [
     { value: 'single-0', viewValue: 'Single' },
     { value: 'married-1', viewValue: 'Married' }
   ];
-  educationLevel: EducationLevel[] = [
+  educationLevel: FormDropdown[] = [
     { value: 'primary-0', viewValue: 'Primary' },
     { value: 'secondary-1', viewValue: 'Secondary' },
     { value: 'graduate-1', viewValue: 'Graduate' }
   ];
-  employerSector: EmployerSector[] = [
+  employerSector: FormDropdown[] = [
     { value: 'finance-0', viewValue: 'Finance' },
     { value: 'banking-1', viewValue: 'Banking' },
     { value: 'charity-1', viewValue: 'Charity' }
   ];
-}
-
-interface Gender {
-  value: string;
-  viewValue: string;
-}
-
-
-interface State {
-  value: string;
-  viewValue: string;
-}
-interface Lga {
-  value: string;
-  viewValue: string;
-}
-interface EmploymentStatus {
-  value: string;
-  viewValue: string;
-}
-interface ResidentialStatus {
-  value: string;
-  viewValue: string;
-}
-interface MaritalStatus {
-  value: string;
-  viewValue: string;
-}
-interface EducationLevel {
-  value: string;
-  viewValue: string;
-}
-interface EmployerSector {
-  value: string;
-  viewValue: string;
 }
