@@ -17,10 +17,9 @@ export class HomeComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(PaymentFormComponent, {
-      width: '100vw',
-      maxWidth: "384px",
-      height: '600px'
-      // data: {name: this.name, animal: this.animal}
+      width: '100%',
+      maxWidth: "600px",
+      height: '620px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
