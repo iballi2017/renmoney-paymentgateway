@@ -54,3 +54,10 @@ color: #f15822;
 ::-webkit-scrollbar-thumb:hover {
   background: #888; 
 }
+
+
+  @media(min-width: 600px){
+    .cdk-overlay-pane,.mat-dialog-container{
+      width: 384px !important;
+    }
+  }
