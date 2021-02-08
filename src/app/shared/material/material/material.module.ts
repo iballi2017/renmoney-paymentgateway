@@ -10,17 +10,17 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    MatToolbarModule,MatButtonModule,MatDialogModule,MatIconModule,MatStepperModule,MatInputModule,MatDatepickerModule,MatNativeDateModule,MatSelectModule,MatBottomSheetModule
+    MatToolbarModule,MatButtonModule,MatDialogModule,MatIconModule,MatStepperModule,MatInputModule,MatDatepickerModule,MatNativeDateModule,MatSelectModule,MatBottomSheetModule,MatSlideToggleModule
   ],
   exports: [
-    MatToolbarModule,MatButtonModule,MatDialogModule,MatIconModule,MatStepperModule,MatInputModule,MatDatepickerModule,MatNativeDateModule,MatSelectModule,MatBottomSheetModule
+    MatToolbarModule,MatButtonModule,MatDialogModule,MatIconModule,MatStepperModule,MatInputModule,MatDatepickerModule,MatNativeDateModule,MatSelectModule,MatBottomSheetModule,MatSlideToggleModule
   ]
 })
 export class MaterialModule { }
