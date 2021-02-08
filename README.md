@@ -1,9 +1,14 @@
 #Frontend Developer Assessment
+
+
 You are to create a pay with Renmoney button, once clicked this opens a widget centered in the middle of the screen of size 384px width by 620px height, but should become full screen on screen sizes below 600px width.
 This widget should have the Renmoney logo and an introductory message of your choice.
 There should be a continue button which starts the onboarding process.
 The onboarding process involves:
-##Eligibility Check: 
+
+
+##Eligibility Check:
+
 -	State and lga
 -	Employment status: Employed or Self-Employed
 -	Monthly Income
@@ -13,18 +18,25 @@ The onboarding process involves:
 -	Email
 -	Phone number
 -	Gender
+
+
 ##Personal Details
+
 -	Residential Status – Owner or renting
 -	Residential Address
 -	Date moved in (Date picker)
 -	Marital Status – Single, Married
 -	Level of Education – Primary, Secondary, Graduate
+
+
 ##Employment Details
+
 -	Employer name
 -	Employer Sector – Finance, Banking, Charity
 -	Employment start date (Date picker)
 -	Office address
 -	Work email
+
 
 All these inputs should `not be` on a single page of the widget, try to make different pages for these sections.
 Figure out the best approach for this.
