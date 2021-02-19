@@ -9,11 +9,6 @@ import { NigerianstatesService } from 'src/app/shared/service/nigerianstates.ser
 import { PaymentService } from 'src/app/shared/service/payment.service';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 
-// function bvnLength(control:any){
-//   console.log(control.value);
-//   // if(control.value.length < 11)
-//   return null;
-// }
 
 @Component({
   selector: 'app-payment-form',
