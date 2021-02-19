@@ -52,7 +52,7 @@ export class PaymentFormComponent implements OnInit {
       clientAddressCtrl: ['', Validators.required],
       residentialStatusCtrl: ['', Validators.required],
       dateMovedInCtrl: ['', Validators.required],
-      employmentStatusCtrl: ['', Validators.required],
+      maritalStatusCtrl: ['', Validators.required],
       educationLevelCtrl: ['', Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({

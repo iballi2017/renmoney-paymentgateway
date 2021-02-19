@@ -151,9 +151,9 @@
             </mat-form-field>
             <!-- marital status -->
             <mat-form-field class="full-width" appearance="fill">
-                <mat-label>Employment status</mat-label>
-                <mat-select formControlName="employmentStatusCtrl" required
-                    [ngClass]="{'is-invalid': secondFormGroup.get('employmentStatusCtrl')?.touched && secondFormGroup.get('employmentStatusCtrl')?.invalid}">
+                <mat-label>Marital status</mat-label>
+                <mat-select formControlName="maritalStatusCtrl" required
+                    [ngClass]="{'is-invalid': secondFormGroup.get('maritalStatusCtrl')?.touched && secondFormGroup.get('maritalStatusCtrl')?.invalid}">
                     <mat-option *ngFor="let status of maritalStatus" [value]="status.value">
                         {{status.viewValue}}
                     </mat-option>
