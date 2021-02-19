@@ -41,7 +41,7 @@ export class PaymentFormComponent implements OnInit {
       clientGenderCtrl: ['', Validators.required],
       clientEmailCtrl: ['', [Validators.required, Validators.email]],
       clientPhoneCtrl: ['', Validators.required],
-      clientBvnCtrl: ['', Validators.required],
+      clientBvnCtrl: ['', [Validators.required, Validators.minLength(11)]],
       clientStateCtrl: ['', Validators.required],
       clientLgaCtrl: ['', Validators.required],
       clientEmploymentStatusCtrl: ['', Validators.required],
